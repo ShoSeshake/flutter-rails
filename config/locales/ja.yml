@@ -1,0 +1,474 @@
+---
+ja:
+  enums:
+    account:
+      account_type:
+        user: "ユーザー"
+        guide: "ガイド"
+    collection:
+      status:
+        ongoing: "公開中"
+        closed: "非公開"
+    company:
+      gender:
+        non: "未選択"
+        man: "男性"
+        woman: "女性"
+    contact:
+      content:
+        about: "本サービスについて"
+        usage: "使い方について"
+        price: "料金について"
+        video: "動画について"
+        refund: "返金"
+        other: "その他"
+    fee:
+      transfer:
+        unsettled: "未振込"
+        transferred: "振込済み"
+        failed: "振込失敗"
+    guide_info:
+      business_type:
+        solo: "個人事業主"
+        company: "法人"
+    solo_proprietorship:
+      gender:
+        non: "未選択"
+        man: "男性"
+        woman: "女性"
+    subscription:
+      status:
+        unpaid: "未払い"
+        paid: "支払い済み"
+        refund: "返金済"
+      payment_method:
+        card: "カード"
+    tour_payment:
+      status:
+        unpaid: "未払い"
+        paid: "支払い済み"
+        refund: "返金済"
+      payment_method:
+        card: "カード"
+    user_info:
+      gender:
+        non: "未選択"
+        man: "男性"
+        woman: "女性"
+    video:
+      public_flag:
+        waiting: "審査待ち"
+        released: "配信中"
+        closed: "一時公開中止"
+        declined: "審査落ち"
+        deleted: "削除済み"
+    video_payment:
+      status:
+        unpaid: "未払い"
+        paid: "支払い済み"
+        refund: "返金済"
+      payment_method:
+        card: "カード"
+  activerecord:
+    models:
+      account: "アカウント"
+      area: "エリア"
+      browsing_history: "訪問履歴"
+      card: "カード"
+      category: "カテゴリー"
+      company: "会社情報"
+      contact: "お問い合わせ"
+      distribution: "分配金"
+      favorite_video: "お気に入りツアー動画"
+      favorite_tour: "お気に入りオンラインツアー"
+      fee: "報酬"
+      guide_info: "ガイド情報"
+      monthly: "月次"
+      user_plan: "ユーザー月額プラン"
+      guide_plan: "ガイド月額プラン"
+      prefecture: "都道府県"
+      tour: "オンラインツアー"
+      tour_info: "オンラインツアー詳細情報"
+      tour_payment: "オンラインツアー支払い"
+      tour_review: "オンラインツアーレビュー"
+      tour_sale: "オンラインツアー売上"
+      searched_column: "検索履歴"
+      sns_credential: "SNS認証"
+      solo_proprietorship: "個人事業主情報"
+      user_info: "ユーザー情報"
+      video: "ツアー動画"
+      video_price: "ツアー動画料金"
+      video_payment: "ツアー動画支払い"
+      video_review: "ツアー動画レビュー"
+      video_sale: "ツアー動画売上"
+      watching_history: "視聴履歴"
+    attributes:
+      account:
+        name: "ユーザーネーム"
+        email: "メールアドレス"
+        encrypted_password: "パスワード"
+        agreement: "同意"
+        agreement_version: "同意書のバージョン"
+        notice_flag: "お知らせの必要"
+        delete_time: "退会日時"
+        delete_flag: "退会"
+        password: "パスワード"
+        password_confirmation: "確認用パスワード"
+      area:
+        name: "名前"
+      category:
+        name: "名前"
+      card:
+        customer_id: "カスタマー番号"
+      company:
+        last_name: "名字"
+        first_name: "名前"
+        last_name_kana: "名字(カナ)"
+        first_name_kana: "名前(カナ)"
+        gender: "性別"
+        phone_number: "電話番号"
+        email: "メールアドレス"
+      contact:
+        name: "名前"
+        title: "件名"
+        email: "メールアドレス"
+        text: "お問い合わせ内容"
+        content: "お問い合わせ項目"
+      fee:
+        transfer: "振込状況"
+        price: "金額"
+        trading_id: "Stripe用支払い番号"
+        guide_info:
+          post_code: "郵便番号"
+          city: "市町村名"
+          address: "住所"
+          building: "建物の名前と部屋番号"
+          phone_number: "電話番号"
+          homepage: "ウェブサイト"
+          business_type: "事業形態"
+      monthly:
+        year: "年"
+        month: "月"
+        proceeds: "利益"
+        user_subscription: "ユーザー月額料金"
+        guide_subscription: "ガイド月額料金"
+        video_proceeds: "ツアー動画売上"
+        tour_proceeds: "オンラインツアー売上"
+        profit: "純利益"
+        tax: "税"
+        card_fee: "カード手数料"
+        guide_fee: "ガイド報酬"
+
+      guide_subscription:
+        status: "状況"
+        price: "金額"
+        card_fee: "カード手数料"
+        start_date: "開始日"
+        end_date: "終了日"
+        trading_id: "Stripe用取引番号"
+        refund_id: "Stripe用返金番号"
+      guide_plan:
+        name: "プラン名"
+        price: "金額"
+        description: "説明"
+        plan_id: "Stripe用プラン番号"
+        price_id: "Stripe用プライス番号"
+      prefecture:
+        name: "名前"
+      sale:
+        proceeds: "金額"
+      searched_column:
+        question: "項目名"
+        keyword: "キーワード"
+      sns_credential:
+        uid: "ユニークID"
+        provider: "プロバイダ"
+        nickname: "ニックネーム"
+        token: "トークン"
+      solo_proprietorship:
+        last_name: "名字"
+        first_name: "名前"
+        last_name_kana: "名字(カナ)"
+        first_name_kana: "名前(カナ)"
+        gender: "性別"
+        phone_number: "電話番号"
+      tour:
+        title: "タイトル"
+        place: "場所"
+        price: "料金"
+        description: "説明"
+        time: "時間"
+        url: "イメージ画像"
+      tour_info:
+        price: "料金"
+        start_time: "開始時間"
+        max_participant: "最大人数"
+        plan_id: "Stripe用プラン番号"
+        price_id: "Stripe用プライス番号"
+      tour_payment:
+        status: "支払い状況"
+        price: "金額"
+        card_fee: "カード手数料"
+        payment_method: "支払い方法"
+        trading_id: "Stripe用取引番号"
+        refund_id: "Stripe用返金番号"
+      tour_review:
+        score: "スコア"
+        content: "評価文"
+      user_info:
+        last_name: "名字"
+        first_name: "名前"
+        last_name_kana: "名字(カナ)"
+        first_name_kana: "名前(カナ)"
+        phone_number: "電話番号"
+        gender: "性別"
+        birthday: "生年月日"
+      user_plan:
+        name: "プラン名"
+        price: "金額"
+        description: "説明"
+        plan_id: "Stripe用プラン番号"
+        price_id: "Stripe用プライス番号"
+      user_subscription:
+        status: "状況"
+        price: "金額"
+        card_fee: "カード手数料"
+        start_date: "開始日"
+        end_date: "終了日"
+        trading_id: "Stripe用取引番号"
+        refund_id: "Stripe用返金番号"
+      video:
+        title: "タイトル"
+        place: "場所"
+        description: "説明"
+        time: "時間"
+        release_time: "公開日"
+        free_flag: "無料かどうか"
+        video_url: "映像"
+        thumbnail: "サムネイル"
+        score: "評価"
+        status: "状況"
+      video_review:
+        score: "スコア"
+        content: "評価文"
+      video_payment:
+        status: "支払い状況"
+        price: "金額"
+        card_fee: "カード手数料"
+        payment_method: "支払い方法"
+        trading_id: "Stripe用取引番号"
+        refund_id: "Stripe用返金番号"
+      video_price:
+        price: "金額"
+        plan_id: "Stripe用プラン番号"
+        price_id: "Stripe用プライス番号"
+    errors:
+      messages:
+        record_invalid: "バリデーションに失敗しました: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"
+  date:
+    abbr_day_names:
+    - 日
+    - 月
+    - 火
+    - 水
+    - 木
+    - 金
+    - 土
+    abbr_month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    day_names:
+    - 日曜日
+    - 月曜日
+    - 火曜日
+    - 水曜日
+    - 木曜日
+    - 金曜日
+    - 土曜日
+    formats:
+      default: "%Y/%m/%d"
+      long: "%Y年%m月%d日(%a)"
+      short: "%m/%d"
+    month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 約1時間
+        other: 約%{count}時間
+      about_x_months:
+        one: 約1ヶ月
+        other: 約%{count}ヶ月
+      about_x_years:
+        one: 約1年
+        other: 約%{count}年
+      almost_x_years:
+        one: 1年弱
+        other: "%{count}年弱"
+      half_a_minute: 30秒前後
+      less_than_x_minutes:
+        one: 1分以内
+        other: "%{count}分未満"
+      less_than_x_seconds:
+        one: 1秒以内
+        other: "%{count}秒未満"
+      over_x_years:
+        one: 1年以上
+        other: "%{count}年以上"
+      x_days:
+        one: 1日
+        other: "%{count}日"
+      x_minutes:
+        one: 1分
+        other: "%{count}分"
+      x_months:
+        one: 1ヶ月
+        other: "%{count}ヶ月"
+      x_years:
+        one: 1年
+        other: "%{count}年"
+      x_seconds:
+        one: 1秒
+        other: "%{count}秒"
+    prompts:
+      day: 日
+      hour: 時
+      minute: 分
+      month: 月
+      second: 秒
+      year: 年
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      unavailable: 'に使用できない文字(%{chars})が含まれています。'
+      accepted: を受諾してください
+      blank: を入力してください
+      present: は入力しないでください
+      confirmation: と%{attribute}の入力が一致しません
+      empty: を入力してください
+      equal_to: は%{count}にしてください
+      even: は偶数にしてください
+      exclusion: は予約されています
+      greater_than: は%{count}より大きい値にしてください
+      greater_than_or_equal_to: は%{count}以上の値にしてください
+      inclusion: は一覧にありません
+      invalid: は不正な値です
+      less_than: は%{count}より小さい値にしてください
+      less_than_or_equal_to: は%{count}以下の値にしてください
+      model_invalid: "バリデーションに失敗しました: %{errors}"
+      not_a_number: は数値で入力してください
+      not_an_integer: は整数で入力してください
+      odd: は奇数にしてください
+      required: を入力してください
+      taken: はすでに存在します
+      too_long: は%{count}文字以内で入力してください
+      too_short: は%{count}文字以上で入力してください
+      wrong_length: は%{count}文字で入力してください
+      other_than: は%{count}以外の値にしてください
+    template:
+      body: 次の項目を確認してください
+      header:
+        one: "%{model}にエラーが発生しました"
+        other: "%{model}に%{count}個のエラーが発生しました"
+  helpers:
+    select:
+      prompt: 選択してください
+    submit:
+      create: 登録する
+      submit: 保存する
+      update: 更新する
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%n%u"
+        precision: 0
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: 円
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: 十億
+          million: 百万
+          quadrillion: 千兆
+          thousand: 千
+          trillion: 兆
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n%u"
+        units:
+          byte: バイト
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: 、
+      two_words_connector: 、
+      words_connector: 、
+  time:
+    am: 午前
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      short: "%y/%m/%d %H:%M"
+    pm: 午後
+  views:
+      pagination:
+        previous: "前"
+        next: "次"
+        truncate: ".."
+        first: "最初へ"
+        last: "最後へ"
